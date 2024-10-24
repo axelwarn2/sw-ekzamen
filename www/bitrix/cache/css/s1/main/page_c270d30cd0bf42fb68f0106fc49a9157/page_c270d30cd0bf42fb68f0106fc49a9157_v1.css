@@ -1,0 +1,594 @@
+
+
+/* Start:/local/templates/main/components/bitrix/news.list/doctors/style.css?17296043351937*/
+.container {
+	width: 100%;
+	max-width: 1310px;
+	margin: 0 auto;
+	padding: 0 15px;
+  }
+  @media (max-width: 475px) {
+	.container {
+	  padding: 0px 12px;
+	}
+  }
+
+.doctors__btn {align-self: center}
+.doctors-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0 0 32px 0;
+}
+.doctors-list .doctors-list__item {
+    display: flex;
+    max-width: 302px;
+    height: auto;
+}
+.doctors-list__item-link {
+    display: flex;
+    flex-direction: column;
+    min-height: 454px;
+    max-width: inherit;
+    overflow: hidden;
+    filter: drop-shadow(0px 2px 2px rgba(196, 196, 196, 0.5));
+    border-radius: 8px;
+    transition: filter .15s ease-out;
+}
+.doctors-list__item-img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 218px;
+    min-height: 218px;
+}
+.doctors-list__item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.doctors-list__item-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 236px;
+    padding: 24px;
+    background-color: #fff;
+    font-size: 16px;
+}
+.doctors-list__item-title {
+    margin: 0 0 12px 0;
+    color: #95BB30;
+    font-size: 16px;
+    line-height: lh(16px, 20px);
+    font-weight: 400;
+    letter-spacing: toem(0.7px, 16px);
+    transition: color .15s ease-out;
+}
+.doctors-list__item-degree {
+    padding: 0 15px 0 0;
+    margin: 0 0 12px 0;
+    line-height: lh(16px, 22px);
+    font-weight: 300;
+}
+.doctors-list__item-experience {
+    margin: 0 0 16px 0;
+    font-weight: 300;
+    color: #E7536D;
+    line-height: lh(16px, 24px);
+}
+.doctors-list__item-btn-more {margin: auto 0 0 auto}
+
+@media (max-width: 550px) {
+    .doctors-list {flex-direction: column;}
+    .doctors-list .doctors-list__item {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 450px) {
+    .doctors-list__item-content {padding: 16px;}
+    .doctors__btn {width: 100%;}
+}
+
+/* End */
+
+
+/* Start:/local/templates/main/components/bitrix/news.list/articles/style.css?17297508672011*/
+.articles__main {
+	display: flex;
+	flex-direction: column;
+}
+
+.articles__form {
+	margin: -84px 0 0 0
+}
+
+.articles__btn {
+	align-self: center
+}
+
+/* articles-list*/
+.articles-list {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	padding: 0 15px 0 0;
+}
+
+.articles-list+.articles__btn {
+	margin: 48px 0 0 0
+}
+
+.articles-list__item {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	max-width: 732px;
+}
+
+.articles-list__img-link {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	overflow: hidden;
+	height: 111px;
+	min-height: 111px;
+}
+
+.articles-list__img {
+	min-width: 166px;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.articles-list__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.articles-list__content-title {
+	margin: 0 0 16px 0;
+	color: #400013;
+	line-height: lh(16px, 20px);
+	letter-spacing: toem(.7px, 16px);
+	transition: color .15s ease-out;
+}
+
+.articles-list__content-description {
+	margin: 0 0 24px 0;
+	font-weight: 300;
+	color: #8D8D8D;
+	transition: color .15s ease-out;
+}
+
+.articles-list__content-btn-link {
+	align-self: flex-end;
+	transition: color .15s ease-out, border-color .15s ease-out;
+}
+
+@media (max-width: 1024px) {
+	.articles__wrapper {
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	.articles__main,
+	.articles__form {
+		width: calc((100% - (30px * 1)) / 2)
+	}
+
+	.articles__form {
+		margin: 0
+	}
+}
+
+@media (max-width: 850px) {
+	.articles__wrapper {
+		gap: 80px
+	}
+
+	.articles__main,
+	.articles__form {
+		width: calc((100% - (30px * 0)) / 1)
+	}
+
+	.articles__form .form {
+		margin: 0 auto
+	}
+}
+
+@media (max-width: 475px) {
+	.articles-list {
+		padding: 0
+	}
+
+	.articles-list__item {
+		flex-direction: column
+	}
+
+	.articles-list__img-link {
+		height: 223px;
+		min-height: 223px;
+	}
+
+	.articles-list__img {
+		max-width: 445px;
+		height: 100%;
+	}
+
+	.articles-list__content-title,
+	.articles-list__content-description,
+	.form__textarea {
+		font-size: 18px
+	}
+
+	.articles-list+.articles__btn {
+		width: 100%
+	}
+
+	.articles__form .form {
+		padding: 24px 16px
+	}
+}
+
+/* End */
+
+
+/* Start:/local/templates/main/components/konstantin/main.feedback/feedback_review/style.css?17297509216794*/
+.btn__tertiary {
+  background-color: #95bb30;
+  border: 1px solid #95bb30;
+  color: #fff;
+}
+
+.form__btn {
+  margin: 32px 0 16px 0;
+}
+
+.articles__form {
+  margin: -84px 0 0 0;
+}
+
+.articles__btn {
+  align-self: center;
+}
+
+.btn__tertiary:hover {
+  background-color: #669933;
+  border: 1px solid #669933;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .articles__wrapper {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .articles__main,
+  .articles__form {
+    width: calc((100% - (30px * 1)) / 2);
+  }
+
+  .articles__form {
+    margin: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .articles__wrapper {
+    gap: 80px;
+  }
+
+  .articles__main,
+  .articles__form {
+    width: calc((100% - (30px * 0)) / 1);
+  }
+
+  .articles__form .form {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 475px) {
+  .articles-list {
+    padding: 0;
+  }
+
+  .articles-list__item {
+    flex-direction: column;
+  }
+
+  .articles-list__img-link {
+    height: 223px;
+    min-height: 223px;
+  }
+
+  .articles-list__img {
+    max-width: 445px;
+    height: 100%;
+  }
+
+  .articles-list__content-title,
+  .articles-list__content-description,
+  .form__textarea {
+    font-size: 18px;
+  }
+
+  .articles-list + .articles__btn {
+    width: 100%;
+  }
+
+  .articles__form .form {
+    padding: 24px 16px;
+  }
+}
+
+.form__title {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  line-height: 1.4166666667;
+  letter-spacing: 0.0208333333em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #95bb30;
+}
+
+.modal__search .form__title {
+  margin: 0 0 16px 0;
+}
+
+.form__label {
+  display: inline-block;
+  margin: 0 8px 0 24px;
+  cursor: pointer;
+}
+
+.form__label:not(:last-of-type) {
+  margin-right: 12px;
+}
+
+.form__label:last-of-type {
+  margin-bottom: 34px;
+}
+
+.form__label-text {
+  font-size: 16px;
+  line-height: 1.375;
+  font-weight: 300;
+}
+
+.form__label:hover
+  .form__input-checkbox:not(:checked)
+  + .form__input-checkbox-style,
+.form__label:hover .form__input-radio:not(:checked) + .form__input-radio-style {
+  border: 2px solid #8d8d8d;
+}
+
+.form__label:hover
+  .form__input-checkbox:not(:checked)
+  + .form__input-radio-style::before,
+.form__label:hover
+  .form__input-radio:not(:checked)
+  + .form__input-radio-style::before {
+  border-radius: 50%;
+}
+
+.form__label:hover
+  .form__input-checkbox:not(:checked)
+  + .form__input-checkbox-style::before,
+.form__label:hover
+  .form__input-radio:not(:checked)
+  + .form__input-radio-style::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #8d8d8d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form__input,
+.form__textarea,
+.form__btn {
+  display: block;
+  width: 100%;
+}
+
+.form__textarea-box:not(:last-child):not(:only-of-type),
+.form__input-box:not(:last-child):not(:only-of-type) {
+  margin: 0 0 16px 0;
+}
+
+.form__textarea,
+.form__input {
+  padding: 12px 18px;
+  background-color: #f6f1f1;
+  border: none;
+  color: #524e4e;
+  font-size: 16px;
+  line-height: 1.375;
+  font-weight: 300;
+  border-radius: 8px;
+  transition: color 0.3s ease-out;
+}
+
+.form__textarea::-moz-placeholder,
+.form__input::-moz-placeholder {
+  font-size: inherit;
+  color: #8d8d8d;
+  font-weight: 300;
+}
+
+.form__textarea::placeholder,
+.form__input::placeholder {
+  font-size: inherit;
+  color: #8d8d8d;
+  font-weight: 300;
+}
+
+.form__textarea:hover,
+.form__textarea:focus,
+.form__input:hover,
+.form__input:focus {
+  color: #524e4e;
+}
+
+.form__textarea:hover::-moz-placeholder,
+.form__textarea:focus::-moz-placeholder,
+.form__input:hover::-moz-placeholder,
+.form__input:focus::-moz-placeholder {
+  color: inherit;
+}
+
+.form__textarea:hover::placeholder,
+.form__textarea:focus::placeholder,
+.form__input:hover::placeholder,
+.form__input:focus::placeholder {
+  color: inherit;
+}
+
+.form__input-checkbox,
+.form__input-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  padding: 0 0 0 24px;
+}
+
+.form__input-checkbox-style,
+.form__input-radio-style {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #b8b8b8;
+  margin: 3px 0 0 -24px;
+}
+
+/* checked */
+.form__input-checkbox:checked + .form__input-checkbox-style,
+.form__input-radio:checked + .form__input-radio-style {
+  border: 2px solid #95bb30;
+}
+
+.form__input-checkbox:checked + .form__input-checkbox-style::before,
+.form__input-radio:checked + .form__input-radio-style::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #95bb30;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form__input-radio-style,
+.form__input-radio:checked + .form__input-radio-style::before {
+  border-radius: 50%;
+}
+
+.form__input-checkbox:disabled + .form__input-checkbox-style,
+.form__input-radio:disabled + .form__input-radio-style {
+  border-color: #8d8d8d;
+}
+
+.form__input-checkbox:checked:disabled + .form__input-checkbox-style::before,
+.form__input-radio:checked:disabled + .form__input-radio-style::before {
+  background-color: #8d8d8d;
+}
+
+.form__input-checkbox:focus + .form__input-checkbox-style,
+.form__input-radio:focus + .form__input-radio-style {
+  box-shadow: 0 0 0 1px #400013;
+}
+
+.modal__search .form__input-box {
+  width: 100%;
+}
+
+.decore--message,
+.decore--user,
+.decore--phone {
+  padding: 0 0 0 32px;
+  position: relative;
+}
+
+.decore--phone::after {
+  background-image: url("/local/templates/main/components/konstantin/main.feedback/feedback_review/../../../../assets/images/input--icon-phone.svg");
+}
+
+.decore--user::after {
+  background-image: url("/local/templates/main/components/konstantin/main.feedback/feedback_review/../../../../assets/images/input--icon-user.svg");
+}
+
+.decore--message::after {
+  background-image: url("/local/templates/main/components/konstantin/main.feedback/feedback_review/../../../../assets/images/textarea--icon-message.svg");
+}
+
+.decore--message::after,
+.decore--user::after,
+.decore--phone::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+}
+
+.decore--user::after,
+.decore--phone::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 96px;
+  transition: color 0.3s ease-out;
+}
+
+@media (max-width: 450px) {
+  .form__btn {
+    margin: 32px 0 8px 0;
+  }
+}
+
+.form__agree {
+  font-size: 14px;
+  line-height: 1.7142857143;
+  color: #8d8d8d;
+}
+
+.form__agree-link {
+  border-bottom: 1px solid #8d8d8d;
+}
+
+@media (max-width: 550px) {
+  .decore--message::after {
+    background-image: url("/local/templates/main/components/konstantin/main.feedback/feedback_review/../images/textarea--icon-message--green.svg");
+  }
+
+  .decore--user::after {
+    background-image: url("/local/templates/main/components/konstantin/main.feedback/feedback_review/../images/input--icon-user--green.svg");
+  }
+
+  .decore--phone::after {
+    background-image: url("/local/templates/main/components/konstantin/main.feedback/feedback_review/../images/input--icon-phone--green.svg");
+  }
+}
+
+/* End */
+/* /local/templates/main/components/bitrix/news.list/doctors/style.css?17296043351937 */
+/* /local/templates/main/components/bitrix/news.list/articles/style.css?17297508672011 */
+/* /local/templates/main/components/konstantin/main.feedback/feedback_review/style.css?17297509216794 */
