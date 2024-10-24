@@ -1,0 +1,31 @@
+<?php
+$aMenuLinks = [
+    [
+        "Специалисты",
+        "specialists/",
+        [],
+        [],
+    ],
+    [
+        "О клинике",
+        "about_clinic/",
+        [],
+        [],
+    ],
+    [
+        "Статьи",
+        "articles.php/",
+    ],
+    [
+        "Прайс-лист",
+        "price_list.php/",
+    ],
+    [
+        "Акции",
+        "stock.php/",
+    ],
+    [
+        "Контакты",
+        "contacts.php/",
+    ],
+];
