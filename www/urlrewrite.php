@@ -1,6 +1,6 @@
 <?php
 $arUrlRewrite=array (
-  2 => 
+  4 => 
   array (
     'CONDITION' => '#^/specialists/#',
     'RULE' => '',
@@ -8,7 +8,7 @@ $arUrlRewrite=array (
     'PATH' => '/specialists/index.php',
     'SORT' => 100,
   ),
-  3 => 
+  5 => 
   array (
     'CONDITION' => '#^/articles/#',
     'RULE' => '',

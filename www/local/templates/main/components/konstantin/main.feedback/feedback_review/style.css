@@ -335,14 +335,14 @@
 
 @media (max-width: 550px) {
   .decore--message::after {
-    background-image: url("../images/textarea--icon-message--green.svg");
+    background-image: url("../../../../assets/images/input--icon-phone.svg");
   }
 
   .decore--user::after {
-    background-image: url("../images/input--icon-user--green.svg");
+    background-image: url("../../../../assets/images/input--icon-user.svg");
   }
 
   .decore--phone::after {
-    background-image: url("../images/input--icon-phone--green.svg");
+    background-image: url("../../../../assets/images/textarea--icon-message.svg");
   }
 }

@@ -30,7 +30,7 @@ $asset->addString('<meta name="viewport" content="width=device-width, initial-sc
             <div class="container">
                 <div class="header__bottom">
                     <div class="header__logo logo">
-                        <a class="logo__link" href="/">
+                        <a class="logo__link" href="<?=$APPLICATION->GetCurPage() === "/" ? "javascript:;" : "/"?>">
                             <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.gif"
                                 alt="<?=Loc::getMessage("HEADER_LOGO_ALT")?>">
                         </a>

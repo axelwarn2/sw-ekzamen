@@ -1,4 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+use \Bitrix\Main\Localization\Loc;
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -18,7 +19,20 @@ $this->setFrameMode(true);
         <h2 class="section__title"><?=$arResult["NAME"]?></h2>
         <ul class="doctors-list">
             <?php foreach($arResult["ITEMS"] as $arItem):?>
-            <li class="doctors-list__item">
+                <?php
+                $this->AddEditAction(
+                    $arItem['ID'],
+                    $arItem['EDIT_LINK'],
+                    CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"),
+                );
+                $this->AddDeleteAction(
+                    $arItem['ID'],
+                    $arItem['DELETE_LINK'],
+                    CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
+                    ["CONFIRM" => Loc::getMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')],
+                );
+                ?>
+            <li class="doctors-list__item"  id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                 <a class="doctors-list__item-link" href="<?= $arItem["DETAIL_PAGE_URL"]?>">
                     <?php if($arItem["PREVIEW_PICTURE"]):?>
                     <div class="doctors-list__item-img-box">
@@ -37,6 +51,6 @@ $this->setFrameMode(true);
             </li>
             <?endforeach;?>
         </ul>
-		<a class="doctors__btn btn btn__primary" href="javascript:;"><?=GetMessage("SEE_ALL")?></a>
+		<a class="doctors__btn btn btn__primary" href="specialists/"><?=GetMessage("SEE_ALL")?> (<?= $arResult['ITEMS_COUNT'] ?>)</a>
     </div>
 <?endif?>

@@ -39,7 +39,7 @@
                             <ul class="nav-sub__list">
                             <? else: ?>
                                 <li class="nav-sub__list-item<? if ($arItem["SELECTED"]): ?> item-selected<? endif ?>">
-                                    <a href="<?= $arItem["LINK"] ?>" class="nav-sub__list-link parent"><?= $arItem["TEXT"] ?></a>
+                                    <a href="<?=$APPLICATION->GetCurPage() === $arItem["LINK"] ? "javascript:;" : $arItem["LINK"]?>" class="nav-sub__list-link parent"><?= $arItem["TEXT"] ?></a>
                                     <ul>
                                     <? endif ?>
                                 <? else: ?>
@@ -50,7 +50,7 @@
                                             </li>
                                         <? else: ?>
                                             <li class="nav-sub__list-item">
-                                                <a href="<?= $arItem["LINK"] ?>" class="nav-sub__list-link"><?= $arItem["TEXT"] ?></a>
+                                                <a href="<?=$APPLICATION->GetCurPage() === $arItem["LINK"] ? "javascript:;" : $arItem["LINK"]?>" class="nav-sub__list-link"><?= $arItem["TEXT"] ?></a>
                                             </li>
                                         <? endif ?>
                                     <? else: ?>
