@@ -3,6 +3,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     die();
 
 use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 
 $asset = Asset::getInstance();
 
@@ -30,13 +32,13 @@ $asset->addString('<meta name="viewport" content="width=device-width, initial-sc
                     <div class="header__logo logo">
                         <a class="logo__link" href="/">
                             <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.gif"
-                                alt="Логотип: Первая кардиоклиника">
+                                alt="<?=Loc::getMessage("HEADER_LOGO_ALT")?>">
                         </a>
                     </div>
 
                     <div class="header__group-btn">
                         <div class="header__exclamation modal__btn" data-target="#consultation"
-                            title="Онлайн консультации">
+                            title="<?=Loc::getMessage("HEADER_ONLINE_CONSULT")?>">
                             <div class="header__exclamation-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -46,15 +48,15 @@ $asset->addString('<meta name="viewport" content="width=device-width, initial-sc
                                         stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            <div class="header__exclamation-text">Онлайн консультации</div>
+                            <div class="header__exclamation-text"><?=Loc::getMessage("HEADER_ONLINE_CONSULT")?></div>
                         </div>
-                        <button class="header__btn btn__primary menu nav-menu__toggler" title="Меню сайта">
+                        <button class="header__btn btn__primary menu nav-menu__toggler" title="<?=Loc::getMessage("HEADER_SITE_MENU")?>">
                             <div class="menu__wrapper">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </div>
-                            <div class="header__btn-text">Меню сайта</div>
+                            <div class="header__btn-text"><?=Loc::getMessage("HEADER_SITE_MENU")?></div>
                         </button>
                     </div>
                     <nav class="header__nav nav">

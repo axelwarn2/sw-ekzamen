@@ -1,6 +1,9 @@
 <?
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     die();
+
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 ?>
 
 </main>
@@ -12,7 +15,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 <div class="footer__logo logo">
                     <a class="logo__link" href="/">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo--footer.svg"
-                            alt="Логотип: Первая кардиоклиника">
+                            alt="<?=Loc::getMessage("FOOTER_LOGO_ALT")?>">
                     </a>
                 </div>
                 <div class="footer__group">
@@ -68,30 +71,28 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         "bitrix:menu",
                         "bottom_menu",
                         array(
-                            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-                            "CHILD_MENU_TYPE" => "subtop",	// Тип меню для остальных уровней
-                            "DELAY" => "N",	// Откладывать выполнение шаблона меню
-                            "MAX_LEVEL" => "2",	// Уровень вложенности меню
-                            "MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "subtop",
+                            "DELAY" => "N",	
+                            "MAX_LEVEL" => "2",	
+                            "MENU_CACHE_GET_VARS" => array(
                                 0 => "",
                             ),
-                            "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-                            "MENU_CACHE_TYPE" => "N",	// Тип кеширования
-                            "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-                            "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-                            "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "N",
+                            "MENU_CACHE_USE_GROUPS" => "Y",	
+                            "ROOT_MENU_TYPE" => "top",
+                            "USE_EXT" => "Y",
                         ),
                         false
                     ); ?>
                 </nav>
             </div>
             <div class="footer__watermark">
-                <div class="footer__watermark-copyright">© <?= date("Y") ?> © ООО «Сибирь-Ассист»,Первая
-                    Кардиоклиника.Все права
-                    защищены.Информация на сайте не является публичной офертой.</div>
+                <div class="footer__watermark-copyright">© <?= date("Y") ?> <?= Loc::getMessage("FOOTER_COPYRIGHT")?></div>
                 <a class="footer__watermark-dev-link" href="javascript:;">
                     <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/dev-logo.svg"
-                        alt="Наш надежный digital-партнер: SunWeb">
+                        alt="<?= Loc::getMessage("FOOTER_DEV_ALT")?>">
                 </a>
             </div>
         </div>
