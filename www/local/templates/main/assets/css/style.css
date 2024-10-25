@@ -138,7 +138,6 @@ button,
   align-items: center;
   justify-content: center;
   padding: 0.5em 0.6666666667em;
-  background-color: transparent;
   font-size: 18px;
   line-height: 1;
   font-weight: 400;
@@ -148,7 +147,6 @@ button,
   box-shadow: none;
   cursor: pointer;
   position: relative;
-  color: #8D8D8D;
   border-radius: 0.2222222222em;
   z-index: 5;
   text-transform: uppercase;
@@ -1412,4 +1410,3 @@ img {
     gap: 10px;
   }
 }
-/* main sections */
