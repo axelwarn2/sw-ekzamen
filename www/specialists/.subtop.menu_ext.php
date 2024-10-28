@@ -13,6 +13,9 @@ $aMenuLinksExt = [];
 
 $elements = Specialists::getList([
     'select' => ['CODE', 'NAME'],
+    'filter' => [
+        'ACTIVE' => 'Y',
+    ],
 ])->fetchAll();
 
 foreach ($elements as $element) {
