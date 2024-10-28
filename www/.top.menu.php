@@ -14,18 +14,26 @@ $aMenuLinks = [
     ],
     [
         "Статьи",
-        "articles.php/",
+        "articles/",
+        [],
+        [],
     ],
     [
         "Прайс-лист",
-        "price_list.php/",
+        "price_list.php",
+        [],
+        [],
     ],
     [
         "Акции",
-        "stock.php/",
+        "stock.php",
+        [],
+        [],
     ],
     [
         "Контакты",
-        "contacts.php/",
+        "contacts.php",
+        [],
+        [],
     ],
 ];
