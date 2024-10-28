@@ -28,7 +28,7 @@ Loc::loadMessages(__FILE__);
                                         "",
                                         array(
                                             "AREA_FILE_SHOW" => "file",
-                                            "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_phone-one.php"
+                                            "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_phone-one.html"
                                         )
                                     ); ?>
                                 </a>
@@ -42,7 +42,7 @@ Loc::loadMessages(__FILE__);
                                         "",
                                         array(
                                             "AREA_FILE_SHOW" => "file",
-                                            "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_phone-two.php"
+                                            "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_phone-two.html"
                                         )
                                     ); ?>
                                 </a>
@@ -56,7 +56,7 @@ Loc::loadMessages(__FILE__);
                                         "",
                                         array(
                                             "AREA_FILE_SHOW" => "file",
-                                            "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_email.php"
+                                            "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_email.html"
                                         )
                                     ); ?>
                                 </a>
@@ -114,7 +114,7 @@ Loc::loadMessages(__FILE__);
                     "",
                     array(
                         "AREA_FILE_SHOW" => "file",
-                        "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_modal-image.php"
+                        "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_modal-image.html"
                     )
                 ); ?>
             </div>
@@ -126,7 +126,7 @@ Loc::loadMessages(__FILE__);
                             "",
                             array(
                                 "AREA_FILE_SHOW" => "file",
-                                "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_modal-text.php"
+                                "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_modal-text.html"
                             )
                         ); ?>
                     </p>
