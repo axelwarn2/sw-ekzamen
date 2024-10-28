@@ -1,1 +1,0 @@
-<?php $filesInfo = ["/local/templates/main/assets/js/main.js" => "17295100848246",]; ?>
