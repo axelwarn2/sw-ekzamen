@@ -1,5 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 	die();
+
+use Bitrix\Main\Localization\Loc;
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -25,7 +27,7 @@ $this->setFrameMode(true);
 <? endif ?>
 
 <? if ($arParams["USE_SEARCH"] == "Y"): ?>
-	<?= GetMessage("SEARCH_LABEL") ?>	<? $APPLICATION->IncludeComponent(
+	<?= Loc::getMessage("SEARCH_LABEL") ?>	<? $APPLICATION->IncludeComponent(
 			"bitrix:search.form",
 			"flat",
 			array(

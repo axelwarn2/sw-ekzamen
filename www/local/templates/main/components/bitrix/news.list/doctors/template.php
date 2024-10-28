@@ -51,6 +51,6 @@ $this->setFrameMode(true);
             </li>
             <?endforeach;?>
         </ul>
-		<a class="doctors__btn btn btn__primary" href="specialists/"><?=GetMessage("SEE_ALL")?> (<?= $arResult['ITEMS_COUNT'] ?>)</a>
+		<a class="doctors__btn btn btn__primary" href="specialists/"><?=Loc::getMessage("SEE_ALL")?> (<?= $arResult['ITEMS_COUNT'] ?>)</a>
     </div>
 <?endif?>

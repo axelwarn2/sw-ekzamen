@@ -1,5 +1,9 @@
+
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
-    die(); ?>
+    die(); 
+
+use Bitrix\Main\Localization\Loc;
+?>
 
 <? if (!empty($arResult)): ?>
     <ul class="footer-nav__list">
@@ -56,12 +60,12 @@
                                         <? if ($arItem["DEPTH_LEVEL"] == 1): ?>
                                             <li class="footer-nav__item-link">
                                                 <a href="" class="nav__list-link"
-                                                    title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
+                                                    title="<?= Loc::getMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
                                             </li>
                                         <? else: ?>
                                             <li class="footer-sub-nav__item">
                                                 <a href="" class="denied"
-                                                    title="<?= GetMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
+                                                    title="<?= Loc::getMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
                                             </li>
                                         <? endif ?>
                                     <? endif ?>

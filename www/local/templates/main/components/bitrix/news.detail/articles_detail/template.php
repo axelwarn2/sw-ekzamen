@@ -1,5 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 	die();
+
+use Bitrix\Main\Localization\Loc;
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -42,14 +44,14 @@ $this->setFrameMode(true);
 	<br />
 	<? foreach ($arResult["FIELDS"] as $code => $value):
 		if ('PREVIEW_PICTURE' == $code || 'DETAIL_PICTURE' == $code) {
-			?>		<?= GetMessage("IBLOCK_FIELD_" . $code) ?>:&nbsp;
+			?>		<?= Loc::getMessage("IBLOCK_FIELD_" . $code) ?>:&nbsp;
 			<?
 			if (!empty($value) && is_array($value)) {
 				?><img border="0" src="<?= $value["SRC"] ?>" width="<?= $value["WIDTH"] ?>" height="<?= $value["HEIGHT"] ?>">
 				<?
 			}
 		} else {
-			?>		<?= GetMessage("IBLOCK_FIELD_" . $code) ?>:&nbsp;<?= $value; ?>
+			?>		<?= Loc::getMessage("IBLOCK_FIELD_" . $code) ?>:&nbsp;<?= $value; ?>
 			<?
 		}
 		?><br />
