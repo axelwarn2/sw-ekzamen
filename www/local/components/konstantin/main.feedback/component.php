@@ -1,6 +1,10 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
+}
+
+use Bitrix\Main\Loader;
 
 /**
  * Bitrix vars
@@ -11,8 +15,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
  * @global CMain $APPLICATION
  * @global CUser $USER
  */
-
-use Bitrix\Main\Loader;
 
 $arResult["PARAMS_HASH"] = md5(serialize($arParams) . $this->GetTemplateName());
 
@@ -72,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset(
             );
 
             if (Loader::includeModule('iblock')) {
-                $IBLOCK_ID = 4;
+                $IBLOCK_ID = $arParams["IBLOCK_ID"];
 
                 $el = new CIBlockElement;
                 $arLoadProductArray = array(

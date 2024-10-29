@@ -1,60 +1,72 @@
-<?
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
+<?php
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 	die();
+}
 
-$site = ($_REQUEST["site"] <> '' ? $_REQUEST["site"] : ($_REQUEST["src_site"] <> '' ? $_REQUEST["src_site"] : false));
-$arFilter = array("TYPE_ID" => "FEEDBACK_FORM", "ACTIVE" => "Y");
-if ($site !== false)
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+
+$site = ($_REQUEST["site"] ?? ($_REQUEST["src_site"] ?? false));
+$arFilter = [
+	"TYPE_ID" => "FEEDBACK_FORM",
+	"ACTIVE" => "Y"
+];
+
+if ($site !== false) {
 	$arFilter["LID"] = $site;
+}
 
-$arEvent = array();
+$arEvent = [];
 $dbType = CEventMessage::GetList("id", "desc", $arFilter);
-while ($arType = $dbType->GetNext())
+while ($arType = $dbType->GetNext()) {
 	$arEvent[$arType["ID"]] = "[" . $arType["ID"] . "] " . $arType["SUBJECT"];
+}
 
-$arComponentParameters = array(
-	"PARAMETERS" => array(
-		"USE_CAPTCHA" => array(
-			"NAME" => GetMessage("MFP_CAPTCHA"),
+$arComponentParameters = [
+	"PARAMETERS" => [
+		"USE_CAPTCHA" => [
+			"NAME" => Loc::getMessage("MFP_CAPTCHA"),
 			"TYPE" => "CHECKBOX",
 			"DEFAULT" => "Y",
 			"PARENT" => "BASE",
-		),
-		"OK_TEXT" => array(
-			"NAME" => GetMessage("MFP_OK_MESSAGE"),
+		],
+		"OK_TEXT" => [
+			"NAME" => Loc::getMessage("MFP_OK_MESSAGE"),
 			"TYPE" => "STRING",
-			"DEFAULT" => GetMessage("MFP_OK_TEXT"),
+			"DEFAULT" => Loc::getMessage("MFP_OK_TEXT"),
 			"PARENT" => "BASE",
-		),
-		"EMAIL_TO" => array(
-			"NAME" => GetMessage("MFP_EMAIL_TO"),
+		],
+		"EMAIL_TO" => [
+			"NAME" => Loc::getMessage("MFP_EMAIL_TO"),
 			"TYPE" => "STRING",
 			"DEFAULT" => htmlspecialcharsbx(COption::GetOptionString("main", "email_from")),
 			"PARENT" => "BASE",
-		),
-		"REQUIRED_FIELDS" => array(
-			"NAME" => GetMessage("MFP_REQUIRED_FIELDS"),
+		],
+		"REQUIRED_FIELDS" => [
+			"NAME" => Loc::getMessage("MFP_REQUIRED_FIELDS"),
 			"TYPE" => "LIST",
 			"MULTIPLE" => "Y",
-			"VALUES" => array("NONE" => GetMessage("MFP_ALL_REQ"), "NAME" => GetMessage("MFP_NAME"), "EMAIL" => "E-mail", "MESSAGE" => GetMessage("MFP_MESSAGE")),
+			"VALUES" => [
+				"NONE" => Loc::getMessage("MFP_ALL_REQ"),
+				"NAME" => Loc::getMessage("MFP_NAME"),
+				"EMAIL" => "E-mail",
+				"MESSAGE" => Loc::getMessage("MFP_MESSAGE")
+			],
 			"DEFAULT" => "",
 			"COLS" => 25,
 			"PARENT" => "BASE",
-		),
+		],
 
-		"EVENT_MESSAGE_ID" => array(
-			"NAME" => GetMessage("MFP_EMAIL_TEMPLATES"),
+		"EVENT_MESSAGE_ID" => [
+			"NAME" => Loc::getMessage("MFP_EMAIL_TEMPLATES"),
 			"TYPE" => "LIST",
 			"VALUES" => $arEvent,
 			"DEFAULT" => "",
 			"MULTIPLE" => "Y",
 			"COLS" => 25,
 			"PARENT" => "BASE",
-		),
-
-	)
-);
-
-
-?>
-
+		],
+	],
+];

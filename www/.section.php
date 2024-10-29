@@ -1,9 +1,9 @@
-<?
+<?php
+
 $sSectionName = 'Главная';
-$arDirProperties = array(
+$arDirProperties = [
 	'title' => 'Первая кардиоклиника',
 	'description' => 'Description',
 	'keywords' => 'Keywords',
-	'robots' => 'index, follow'
-);
-?>
+	'robots' => 'index, follow',
+];

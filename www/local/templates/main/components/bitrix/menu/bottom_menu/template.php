@@ -1,84 +1,104 @@
+<?php
 
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
-    die(); 
+global $APPLICATION;
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+    die();
+}
 
 use Bitrix\Main\Localization\Loc;
-?>
 
-<? if (!empty($arResult)): ?>
+if (!empty($arResult)): ?>
     <ul class="footer-nav__list">
-        <?
+        <?php
         $previousLevel = 0;
         $inCombinedLi = false;
 
         foreach ($arResult as $arItem): ?>
-
-            <? if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel): ?>
+            <?php
+            if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel): ?>
                 <?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
-            <? endif ?>
+            <?php
+            endif; ?>
 
-            <? if ($arItem["DEPTH_LEVEL"] == 1 && !$arItem["IS_PARENT"] && $arItem["PERMISSION"] > "D"): ?>
+            <?php
+            if ($arItem["DEPTH_LEVEL"] == 1 && !$arItem["IS_PARENT"] && $arItem["PERMISSION"] > "D"): ?>
 
-                <? if (!$inCombinedLi): ?>
-                    <? $inCombinedLi = true; ?>
+                <?php
+                if (!$inCombinedLi): ?>
                     <li class="footer-nav__item">
-                    <? endif ?>
+                        <?php
+                        $inCombinedLi = true; ?>
+                <?php endif; ?>
 
-                    <a href="<?=$APPLICATION->GetCurPage() === $arItem["LINK"] ? $arItem["LINK"] : "javascript:;"?>" class="footer-nav__item-link"><?= $arItem["TEXT"] ?></a>
+                <a href="<?= $APPLICATION->GetCurPage() === $arItem["LINK"] ? $arItem["LINK"] : "javascript:;" ?>" class="footer-nav__item-link"><?= $arItem["TEXT"] ?></a>
 
-                <? else: ?>
+                <?php
+            else: ?>
 
-                    <? if ($inCombinedLi): ?>
-                        <? $inCombinedLi = false; ?>
-                    </li>
-                <? endif ?>
+                <?php
+                if ($inCombinedLi): ?>
+                    <?php
+                    $inCombinedLi = false; ?>
+                </li>
+                <?php endif; ?>
 
-                <? if ($arItem["IS_PARENT"]): ?>
-                    <? if ($arItem["DEPTH_LEVEL"] == 1): ?>
+                <?php
+                if ($arItem["IS_PARENT"]): ?>
+                    <?php
+                    if ($arItem["DEPTH_LEVEL"] == 1): ?>
                         <li class="footer-nav__item">
-                            <a href="<?=$APPLICATION->GetCurPage() === $arItem["LINK"] ? "javascript:;" : $arItem["LINK"]?>" class="footer-nav__item-link">
+                            <a href="<?= $APPLICATION->GetCurPage() === $arItem["LINK"] ? "javascript:;" : $arItem["LINK"] ?>" class="footer-nav__item-link">
                                 <span></span> <?= $arItem["TEXT"] ?>
                             </a>
                             <ul class="footer-sub-nav__list">
-                            <? else: ?>
-                                <li class="footer-nav__item<? if ($arItem["SELECTED"]): ?> item-selected<? endif ?>">
-                                    <a href="<?= $arItem["LINK"] ?>" class="footer-sub-nav__item-link"><?= $arItem["TEXT"] ?></a>
-                                    <ul>
-                                    <? endif ?>
-                                <? else: ?>
-                                    <? if ($arItem["PERMISSION"] > "D"): ?>
-                                        <? if ($arItem["DEPTH_LEVEL"] == 1): ?>
-                                            <li class="footer-nav__item-link">
-                                                <a href="<?=$APPLICATION->GetCurPage() === $arItem["LINK"] ? "javascript:;" : $arItem["LINK"]?>" class="footer-nav__item-link"><?= $arItem["TEXT"] ?></a>
-                                            </li>
-                                        <? else: ?>
-                                            <li class="footer-sub-nav__item">
-                                                <a href="<?=$APPLICATION->GetCurPage() === $arItem["LINK"] ? "javascript:;" : $arItem["LINK"]?>" class="footer-sub-nav__item-link"><?= $arItem["TEXT"] ?></a>
-                                            </li>
-                                        <? endif ?>
-                                    <? else: ?>
-                                        <? if ($arItem["DEPTH_LEVEL"] == 1): ?>
-                                            <li class="footer-nav__item-link">
-                                                <a href="" class="nav__list-link"
-                                                    title="<?= Loc::getMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
-                                            </li>
-                                        <? else: ?>
-                                            <li class="footer-sub-nav__item">
-                                                <a href="" class="denied"
-                                                    title="<?= Loc::getMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
-                                            </li>
-                                        <? endif ?>
-                                    <? endif ?>
-                                <? endif ?>
+                    <?php
+                    else: ?>
+                        <li class="footer-nav__item<?php if ($arItem["SELECTED"]): ?> item-selected<?php endif; ?>">
+                            <a href="<?= $arItem["LINK"] ?>" class="footer-sub-nav__item-link"><?= $arItem["TEXT"] ?></a>
+                            <ul>
+                    <?php
+                    endif; ?>
+                <?php
+                else: ?>
+                    <?php
+                    if ($arItem["PERMISSION"] > "D"): ?>
+                        <?php
+                        if ($arItem["DEPTH_LEVEL"] == 1): ?>
+                            <li class="footer-nav__item-link">
+                                <a href="<?= $APPLICATION->GetCurPage() === $arItem["LINK"] ? "javascript:;" : $arItem["LINK"] ?>" class="footer-nav__item-link"><?= $arItem["TEXT"] ?></a>
+                            </li>
+                        <?php
+                        else: ?>
+                            <li class="footer-sub-nav__item">
+                                <a href="<?= $APPLICATION->GetCurPage() === $arItem["LINK"] ? "javascript:;" : $arItem["LINK"] ?>" class="footer-sub-nav__item-link"><?= $arItem["TEXT"] ?></a>
+                            </li>
+                        <?php endif; ?>
+                    <?php
+                    else: ?>
+                        <?php
+                        if ($arItem["DEPTH_LEVEL"] == 1): ?>
+                            <li class="footer-nav__item-link">
+                                <a href="" class="nav__list-link" title="<?= Loc::getMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
+                            </li>
+                        <?php
+                        else: ?>
+                            <li class="footer-sub-nav__item">
+                                <a href="" class="denied" title="<?= Loc::getMessage("MENU_ITEM_ACCESS_DENIED") ?>"><?= $arItem["TEXT"] ?></a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                <?php endif; ?>
 
-                            <? endif ?>
+            <?php
+            endif; ?>
 
-                            <? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
-                        <? endforeach ?>
+            <?php
+            $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
+        <?php endforeach; ?>
 
-                        <? if ($previousLevel > 1): ?>
-                            <?= str_repeat("</ul></li>", ($previousLevel - 1)); ?>
-                        <? endif ?>
-                    </ul>
-                <? endif ?>
-
+        <?php
+        if ($previousLevel > 1): ?>
+            <?= str_repeat("</ul></li>", ($previousLevel - 1)); ?>
+        <?php endif; ?>
+    </ul>
+<?php endif; ?>

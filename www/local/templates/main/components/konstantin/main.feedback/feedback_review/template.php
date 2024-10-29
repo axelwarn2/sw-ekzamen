@@ -1,8 +1,11 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
+}
 
 use Bitrix\Main\Localization\Loc;
+
 /**
  * Bitrix vars
  *
@@ -15,15 +18,15 @@ use Bitrix\Main\Localization\Loc;
 ?>
 
 <div class="articles__form">
-    <? if (!empty($arResult["ERROR_MESSAGE"])): ?>
-        <? foreach ($arResult["ERROR_MESSAGE"] as $error): ?>
+    <?php if (!empty($arResult["ERROR_MESSAGE"])): ?>
+        <?php foreach ($arResult["ERROR_MESSAGE"] as $error): ?>
             <div class="form-error"><?= $error ?></div>
-        <? endforeach; ?>
-    <? endif; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
 
-    <? if (!empty($arResult["OK_MESSAGE"])): ?>
+    <?php if (!empty($arResult["OK_MESSAGE"])): ?>
         <div class="form__ok-text"><?= $arResult["OK_MESSAGE"] ?></div>
-    <? endif; ?>
+    <?php endif; ?>
 
     <form class="form" action="<?= POST_FORM_ACTION_URI ?>" method="POST">
         <?= bitrix_sessid_post() ?>
@@ -32,47 +35,57 @@ use Bitrix\Main\Localization\Loc;
 
         <label class="form__label">
             <input class="form__input form__input-radio" type="radio" name="feedback_type"
-                value="<?= Loc::getMessage("MFT_CLINIC") ?>" checked="">
+                   value="<?= Loc::getMessage("MFT_CLINIC") ?>" checked="">
             <span class="form__input-radio-style"></span>
             <div class="form__label-text"><?= Loc::getMessage("MFT_CLINIC") ?></div>
         </label>
+
         <label class="form__label">
             <input class="form__input form__input-radio" type="radio" name="feedback_type"
-                value="<?= Loc::getMessage("MFT_DOCTOR") ?>">
+                   value="<?= Loc::getMessage("MFT_DOCTOR") ?>">
             <span class="form__input-radio-style"></span>
             <div class="form__label-text"><?= Loc::getMessage("MFT_DOCTOR") ?></div>
         </label>
+
         <label class="form__label">
             <input class="form__input form__input-radio" type="radio" name="feedback_type"
-                value="<?= Loc::getMessage("MFT_SERVICE") ?>">
+                   value="<?= Loc::getMessage("MFT_SERVICE") ?>">
             <span class="form__input-radio-style"></span>
             <div class="form__label-text"><?= Loc::getMessage("MFT_SERVICE") ?></div>
         </label>
 
         <div class="form__textarea-box decore--message">
-            <textarea class="form__textarea" name="MESSAGE" rows="5" placeholder="<?= Loc::getMessage("MFT_TEXT") ?>"
-                required=""><?= ($arResult["MESSAGE"] ?? '') ?></textarea>
+            <textarea class="form__textarea" name="MESSAGE" rows="5"
+                      placeholder="<?= Loc::getMessage("MFT_TEXT") ?>" required="">
+                <?= ($arResult["MESSAGE"] ?? '') ?>
+            </textarea>
         </div>
 
         <div class="form__input-box decore--user">
-            <input class="form__input" type="text" name="user_name" value="<?= $arResult["AUTHOR_NAME"] ?>"
-                placeholder="<?= Loc::getMessage("MFT_NAME") ?>*" required="">
+            <input class="form__input" type="text" name="user_name"
+                   value="<?= $arResult["AUTHOR_NAME"] ?>"
+                   placeholder="<?= Loc::getMessage("MFT_NAME") ?>*" required="">
         </div>
 
         <div class="form__input-box decore--phone">
-            <input class="form__input" type="tel" name="user_phone" value="<?= $arResult["AUTHOR_PHONE"] ?>"
-                placeholder="<?= Loc::getMessage("MFT_PHONE") ?>*" required="">
+            <input class="form__input" type="tel" name="user_phone"
+                   value="<?= $arResult["AUTHOR_PHONE"] ?>"
+                   placeholder="<?= Loc::getMessage("MFT_PHONE") ?>*" required="">
         </div>
 
-        <button class="form__btn btn btn__tertiary" type="submit" name="submit"
-            value="<?= Loc::getMessage("MFT_SUBMIT") ?>"><?= Loc::getMessage("MFT_SUBMIT") ?></button>
+        <button class="form__btn btn btn__tertiary" type="submit" name="submit" value="<?= Loc::getMessage("MFT_SUBMIT") ?>">
+            <?= Loc::getMessage("MFT_SUBMIT") ?>
+        </button>
 
         <div class="form__agree">
             <p class="form__agree-text">
-                <?= Loc::getMessage("MFT_AGREE_ONE") ?><a class="form__agree-link" href="javascript:;">
-                    <?= Loc::getMessage("MFT_AGREE_TWO") ?></a>
+                <?= Loc::getMessage("MFT_AGREE_ONE") ?>
+                <a class="form__agree-link" href="javascript:;">
+                    <?= Loc::getMessage("MFT_AGREE_TWO") ?>
+                </a>
             </p>
         </div>
+
         <input type="hidden" name="PARAMS_HASH" value="<?= $arResult["PARAMS_HASH"] ?>">
     </form>
 </div>
