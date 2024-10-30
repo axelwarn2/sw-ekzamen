@@ -56,9 +56,8 @@ use Bitrix\Main\Localization\Loc;
 
         <div class="form__textarea-box decore--message">
             <textarea class="form__textarea" name="MESSAGE" rows="5"
-                      placeholder="<?= Loc::getMessage("MFT_TEXT") ?>" required="">
-                <?= ($arResult["MESSAGE"] ?? '') ?>
-            </textarea>
+                      placeholder="<?= Loc::getMessage("MFT_TEXT") ?>"
+                      required=""><?= $arResult["MESSAGE"] ?? "" ?></textarea>
         </div>
 
         <div class="form__input-box decore--user">
