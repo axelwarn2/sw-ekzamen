@@ -29,4 +29,3 @@ foreach ($elements as $element) {
 }
 
 $aMenuLinks = array_merge($aMenuLinks, $aMenuLinksExt);
-?>

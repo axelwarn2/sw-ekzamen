@@ -1,6 +1,7 @@
 <?php
-$arUrlRewrite=[
-  4 => 
+
+$arUrlRewrite = [
+  4 =>
   [
     'CONDITION' => '#^/specialists/#',
     'RULE' => '',
