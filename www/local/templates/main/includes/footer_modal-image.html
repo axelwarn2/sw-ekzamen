@@ -1,0 +1,1 @@
+<img width="661" src="/local/templates/main/assets/images/placeholder-modal-test.jpg" height="123">
